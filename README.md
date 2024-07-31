@@ -26,7 +26,7 @@ import { Client, Intents, Events } from 'friction.ts';
 
 const client = new Client([Intents.GUILDS, Intents.GUILD_MESSAGES]);
 
-client.on(Event.Ready, () => {
+client.on(Events.Ready, () => {
     console.log(`Logged in as ${client.user!.tag}`);
 });
 
