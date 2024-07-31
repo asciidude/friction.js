@@ -44,7 +44,7 @@ export default interface Message {
     messageInteractionMetadata: MessageInteractionMetadata | null,
     interaction: MessageInteraction | null,
     //thread: Channel | null,
-    //components: Array<Component> | null,
+    //components: Array<MessageComponent> | null,
     //stickerItems: Array<MessageStickerItem> | null,
     //stickers: Array<Sticker> | null,
     position: number,
