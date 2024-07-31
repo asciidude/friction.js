@@ -2,7 +2,6 @@ import Intents, { IntentsBitField } from "../util/IntentsBitField";
 import WebSocketManager from "../ws/WebSocketManager";
 import EventEmitter from 'events';
 import ClientUser from "./ClientUser";
-/* import ClientUser from './ClientUser'; */
 
 export default class Client extends EventEmitter {
     public WebSocket: WebSocketManager;
