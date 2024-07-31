@@ -3,6 +3,8 @@
 # Friction
 Friction is an object-oriented Discord API wrapper built for ease of use.
 
+### Dependencies
+
 | 🎯 Dependency  | 📼 Version | 🔗 Link |
 |-----------------|------------|----------|
 | WebSocket       | ^8.18.0    | [npm](https://www.npmjs.com/package/ws) |
