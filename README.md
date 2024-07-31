@@ -3,6 +3,9 @@
 # Friction
 Friction is an object-oriented Discord API wrapper built for ease of use.
 
+### Installation (unavailable @ npm)
+To install friction.ts, simply run `npm install friction.ts`
+
 ### Dependencies
 
 | 🎯 Dependency  | 📼 Version | 🔗 Link |
