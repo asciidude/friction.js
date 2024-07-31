@@ -100,11 +100,11 @@ export default class WebSocketManager {
                         await this.wsc.send(JSON.stringify(Heartbeat));
                     }, interval);
                 } catch(err) {
-                    throw new HeartbeatError('Failed to send heartbeat:', err as Error);
+                    throw new HeartbeatError('Failed to send heartbeat', err as Error);
                 }
             }, delay);
         } catch(err) {
-            throw new HeartbeatError('Failed to send initial heartbeat:', err as Error);
+            throw new HeartbeatError('Failed to send initial heartbeat', err as Error);
         }
     }
 
