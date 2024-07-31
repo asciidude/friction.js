@@ -12,7 +12,7 @@ import Events from "./constants/Events";
 import { Hello, Heartbeat, Identify, Reconnect } from "./constants/Payloads";
 
 /** Models */
-// ...
+import Snowflake from "./models/Snowflake";
 
 /** Util */
 import Intents from '../src/util/IntentsBitField';
@@ -25,7 +25,7 @@ export {
     Gateway, OPCodes, Events,
 
     /** Models */
-    // ...
+    Snowflake,
 
     /** Util */
     Intents

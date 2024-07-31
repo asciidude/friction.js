@@ -2,13 +2,12 @@
  * Interface for Message
  */
 
-import Snowflake from "./Snowflake";
 import User from "./User";
 
 export default interface Message {
-    id: Snowflake;
-    channelId: Snowflake;
-    //author: User
+    id: string;
+    channelId: string;
+    author: User;
     content: string;
     createdTimestamp: Date,
     editedTimestamp: Date | null,
@@ -22,7 +21,7 @@ export default interface Message {
     //reactions: Array<Reactions>,
     nonce: number | string,
     pinned: boolean,
-    webhookId: Snowflake | null,
+    webhookId: string | null,
     type: number,
     //activity: MessageActivity | null,
     //application: Application | null,

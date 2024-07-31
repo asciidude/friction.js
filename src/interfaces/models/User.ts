@@ -5,7 +5,6 @@
 import Snowflake from "./Snowflake";
 
 export default interface User {
-    snowflakeId: Snowflake;
     id: string;
     username: string;
     discriminator: string;

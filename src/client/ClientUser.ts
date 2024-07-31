@@ -1,9 +1,8 @@
 import { cdnBase } from "../constants/BaseURLs";
 import User from "../interfaces/models/User";
-import Snowflake from "../models/Snowflake";
 
 export default class ClientUser implements User {
-    public snowflakeId: Snowflake;
+    public id: string;
     public username: string;
     public discriminator: string;
     public tag: string;
@@ -61,7 +60,7 @@ export default class ClientUser implements User {
         premium: number,
         publicFlags: number
     ) {
-        this.snowflakeId = new Snowflake(id);
+        this.id = id;
         this.username = username;
         this.discriminator = discriminator;
         this.tag = `${username}#${discriminator}`;
@@ -80,9 +79,5 @@ export default class ClientUser implements User {
         this.email = email;
         this.premium = premium;
         this.publicFlags = publicFlags;
-    }
-
-    get id(): string {
-        return this.snowflakeId.id;
     }
 }
