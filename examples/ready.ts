@@ -1,9 +1,7 @@
 import 'dotenv/config';
 import { Client, Intents } from '../src';
 
-const client = new Client([
-    Intents.GUILD_MESSAGES
-]);
+const client = new Client([]);
 
 client.once('ready', () => {
     console.log(`${client.user?.tag} is ready!`);
