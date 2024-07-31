@@ -4,8 +4,8 @@ import EventEmitter from 'events';
 import ClientUser from "./ClientUser";
 
 export default class Client extends EventEmitter {
-    public WebSocket: WebSocketManager;
-    public wsc;
+    private WebSocket: WebSocketManager;
+    private wsc;
     public intents: number;
     public token: string;
 
