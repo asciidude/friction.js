@@ -1,5 +1,5 @@
 import { cdnBase } from "../constants/BaseURLs";
-import User from "../interfaces/models/User";
+import User from "../interfaces/models/core/User";
 
 export default class ClientUser implements User {
     public id: string;

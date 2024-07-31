@@ -1,4 +1,4 @@
-import SnowflakeInterface from "../interfaces/models/Snowflake";
+import SnowflakeInterface from "../interfaces/models/core/Snowflake";
 
 export default class Snowflake implements SnowflakeInterface {
     public _id: string;

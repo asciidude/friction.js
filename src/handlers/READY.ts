@@ -1,7 +1,7 @@
 import Client from '../client/Client';
 import ClientUser from '../client/ClientUser';
 import GatewayEvent from '../interfaces/payloads/GatewayEvent';
-import Events from '../constants/Events';
+import Events from '../types/Events';
 
 export default function(client: Client, payload: GatewayEvent) {
     client.user = new ClientUser(

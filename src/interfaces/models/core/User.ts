@@ -2,8 +2,6 @@
  * Interface for User
  */
 
-import Snowflake from "./Snowflake";
-
 export default interface User {
     id: string;
     username: string;
