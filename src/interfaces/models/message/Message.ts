@@ -13,11 +13,18 @@ import Application from "../core/Application";
 import MessageReference from "./MessageReference";
 import MessageInteractionMetadata from "./MessageInteractionMetadata";
 import MessageInteraction from "./MessageInteraction";
+import Channel from "../channel/Channel";
+import MessageComponent from "./MessageComponent";
+import StickerItem from "./StickerItem";
+import Sticker from "./Sticker";
+import RoleSubscriptionData from "../role/RoleSubscriptionData";
+import ResolvedData from "./ResolvedData";
+import MessageCall from "./MessageCall";
+import Poll from "./Poll";
 
 export default interface Message {
     id: string;
     channelId: string;
-    //channel: Channel;
     author: User;
     content: string;
     createdTimestamp: Date,
@@ -40,16 +47,26 @@ export default interface Message {
     flags: number,
     reference: MessageReference | null,
     referenceContent: Message | null,
-    snapshots: Array<Message> | null, /** Currently contains: type, content, embeds, attachments, timestamp, editedTimestamp, flags, mentions, mentionRoles */
+    snapshots: Array<Pick<Message, 
+        'type' 
+        | 'content' 
+        | 'embeds' 
+        | 'attachments' 
+        | 'createdTimestamp' 
+        | 'editedTimestamp' 
+        | 'flags' 
+        | 'mentionsUsers' 
+        | 'mentionsRoles'
+    >> | null,
     messageInteractionMetadata: MessageInteractionMetadata | null,
     interaction: MessageInteraction | null,
-    //thread: Channel | null,
-    //components: Array<MessageComponent> | null,
-    //stickerItems: Array<MessageStickerItem> | null,
-    //stickers: Array<Sticker> | null,
+    thread: Channel | null,
+    components: Array<MessageComponent> | null,
+    stickerItems: Array<StickerItem> | null,
+    stickers: Array<Sticker> | null,
     position: number,
-    //roleSubscription: RoleSubscriptionData,
-    //resolved: ResolvedData,
-    //poll: Poll,
-    //call: MessageCall
+    roleSubscription: RoleSubscriptionData,
+    resolved: ResolvedData,
+    poll: Poll,
+    call: MessageCall
 }

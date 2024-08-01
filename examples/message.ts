@@ -1,8 +1,9 @@
 import 'dotenv/config';
-import { Client, Intents, Events } from '../src';
+import { Client, Intents, Events, Message, Channel } from '../src';
 
 const client = new Client([
-    Intents.GUILD_MESSAGES
+    Intents.GUILD_MESSAGES,
+    Intents.MESSAGE_CONTENT
 ]);
 
 client.once(Events.Ready, () => {
@@ -10,9 +11,18 @@ client.once(Events.Ready, () => {
 });
 
 
-client.on(Events.MessageCreate, (message/*: Message*/) => {
-    // got lots to work on before this ;-;
-    // love discord, hate the amount of API functions there are for library devs to be pained thru
-})
+client.on(Events.MessageCreate, async (message: Message) => {
+    if(message.author.bot) return;
+    const channel = await (new Channel(client, message.channelId)).get();
+
+    // Send a message to the channel if content is equal to "hello" or "i've" :troll:
+    if(message.content.toLowerCase() === 'hello') {
+        channel?.send('darkness my old friend');
+    }
+
+    if(message.content.toLowerCase() === 'i\'ve') {
+        channel?.send('come to talk with you again');
+    }
+});
 
 client.login(process.env.TOKEN!);
