@@ -16,8 +16,19 @@ client.on(Events.Ready, () => {
     console.log(`Logged in as ${client.user!.tag}`);
 });
 
+client.on(Events.MessageCreate, async (message: Message) => {
+    if(message.author.bot) return;
+    const channel = await (new Channel(client, message.channelId)).get();
+
+    if(message.content.toLowerCase() === 'hello bot') {
+        channel?.send('Hello!');
+    }
+});
+
 client.login('your-bot-token');
 ```
+
+More examples found [here](https://github.com/asciidude/friction.ts/tree/main/examples).
 
 ## Dependencies
 
